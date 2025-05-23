@@ -8,11 +8,19 @@
 #
 /vis/viewer/set/viewpointThetaPhi 105 165 deg
 /vis/viewer/zoom 1.0
+/vis/viewer/set/style wireframe
 #
 # for drawing the tracks
 /vis/scene/endOfEventAction accumulate
 /vis/scene/add/trajectories
 /vis/scene/add/axes
+
+#/vis/filtering/trajectories/create/particleFilter
+#/vis/filtering/trajectories/particleFilter-0/add gamma
+#
+# To invert the above, drawing all particles except gammas,
+# keep the above two lines but also add:
+#/vis/filtering/trajectories/particleFilter-0/invert true
 #
 # Un-comment the following line to draw trajectories created in 
 # worker threads for the case of sub-event parallel mode.
@@ -25,10 +33,10 @@
 #/run/initialize
 
 /gps/pos/shape Circle
-/gps/pos/centre 0. 0. 0. m
+/gps/pos/centre 3. -3. 0. m
 /gps/pos/radius 0. mm
 /gps/pos/sigma_r 2. mm
-/gps/particle proton
+/gps/particle e-
 /gps/pos/type Beam
 
 # the incident surface is in the x-z plane
@@ -41,8 +49,8 @@
 /gps/ang/sigma_r 2.2 deg
 
 /gps/ene/type Gauss
-/gps/ene/mono 1 GeV
+/gps/ene/mono 100 GeV
 /gps/ene/sigma 0.018 GeV
 
 
-/run/beamOn 2000
+#/run/beamOn 2000

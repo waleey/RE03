@@ -103,6 +103,14 @@ void Material::ConstructVacuum()
   
   fVacuum->AddElement(elH, 100 * perCent);
 }
+void Material::ConstructPexiGlass()
+{
+    G4double density = 1.19*g/cm3;
+    fPexiGlass = new G4Material("Plexiglass", density, 3);
+    fPexiGlass->AddElement(elH,0.08);
+    fPexiGlass->AddElement(elC,0.60);
+    fPexiGlass->AddElement(elO,0.32);
+}
 G4Material* Material::GetHDConcrete() 
 {
   ConstructHDConcrete();
@@ -150,4 +158,10 @@ G4Material* Material::GetVacuum()
   ConstructVacuum();
   G4cout << "Vacuum is successfully constructed" << G4endl;
   return fVacuum;
+}
+G4Material* Material::GetPexiGlass()
+{
+  ConstructPexiGlass();
+  G4cout << "PexiGlass is successfully constructed" << G4endl;
+  return fPexiGlass;
 }

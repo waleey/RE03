@@ -36,8 +36,9 @@
 #include "G4ScoringManager.hh"
 
 #include "RE03DetectorConstruction.hh"
-#include "FTFP_BERT.hh" 
-#include "QGSP_BERT_HP.hh"
+//#include "FTFP_BERT.hh" 
+//#include "QGSP_BERT_HP.hh"
+#include "Shielding.hh"
 #include "RE03ActionInitialization.hh"
 
 #include "G4VisExecutive.hh"
@@ -75,7 +76,7 @@ int main(int argc,char** argv)
  G4VUserDetectorConstruction* detector = new RE03DetectorConstruction;
  runManager->SetUserInitialization(detector);
  //
- G4VUserPhysicsList* physics = new QGSP_BERT_HP;
+ G4VUserPhysicsList* physics = new Shielding;
   //G4VUserPhysicsList* physics = new FTFP_BERT;
  runManager->SetUserInitialization(physics);
     

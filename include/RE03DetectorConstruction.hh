@@ -51,44 +51,29 @@ class RE03DetectorConstruction : public G4VUserDetectorConstruction
     virtual void ConstructSDandField();
 
     void SetWorldSize(G4double x, G4double y, G4double z);
-    void SetWallThickness(G4double t);
-
 
   private:
     void DefineMaterials();
     void ConstructWorldGeometry();
-    void ConstructOuterWallGeometry();
-    void ConstructInnerWallGeometry();
-    void UpdateGeometry();
+    //void ConstructOuterWallGeometry();
+    //void ConstructInnerWallGeometry();
+    //void UpdateGeometry();
 
 
   private:
     Material* fMaterial; 
 
     G4VPhysicalVolume* fWorldPhys;
-    G4VPhysicalVolume* fOuterWallPhys;
-    G4VPhysicalVolume* fInnerWallPhys;
     G4LogicalVolume* fWorldLogical;
-    G4LogicalVolume* fOuterWallLogical;
-    G4LogicalVolume* fInnerWallLogical;
     G4bool fConstructed;
 
 
-    G4double fWorldSizeX = floor((20 * 0.5)) * m;
-    G4double fWorldSizeY = floor((20 * 0.5)) * m;
-    G4double fWorldSizeZ = floor((20 * 0.5)) * m;
+    G4double fWorldHalfSizeX = 15. * m;
+    G4double fWorldHalfSizeY = 20. * m;
+    G4double fWorldHalfSizeZ = 5. * m;
 
-    //defining the wall gemetry
-    G4double fWallThickness = 1 * m;
-    G4double fWallWorldGap = 1 * m;
-
-    G4double OuterWallSizeX = fWorldSizeX - 1 * fWallWorldGap;
-    G4double OuterWallSizeY = fWorldSizeY - 1 * fWallWorldGap;
-    G4double OuterWallSizeZ = fWorldSizeZ - 1 * fWallWorldGap;
-
-    G4double InnerWallSizeX = OuterWallSizeX - 1 * fWallThickness;
-    G4double InnerWallSizeY = OuterWallSizeY - 1 * fWallThickness;
-    G4double InnerWallSizeZ = OuterWallSizeZ - 1 * fWallThickness;
+    G4double fWallWorldGap = 1.0 * m;
+    G4double fWallThickness = 1.0 * m;
 
 
 };

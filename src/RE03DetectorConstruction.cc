@@ -49,16 +49,14 @@
 
 #include "LayerGeometry.hh"
 #include "Material.hh"
+#include "WallGeometry.hh"
+#include "Tube&Chamber.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 RE03DetectorConstruction::RE03DetectorConstruction()
   : G4VUserDetectorConstruction(),
     fWorldPhys(0),
-    fOuterWallPhys(0),
-    fInnerWallPhys(0),
     fWorldLogical(0),
-    fOuterWallLogical(0),
-    fInnerWallLogical(0),
     fConstructed(false)
 {
   ;
@@ -77,11 +75,22 @@ G4VPhysicalVolume* RE03DetectorConstruction::Construct()
     fConstructed = true;
     DefineMaterials();
     ConstructWorldGeometry();
-    ConstructOuterWallGeometry();
-    ConstructInnerWallGeometry();
-    LayerGeometry* layerGeometry = new LayerGeometry(fInnerWallLogical);
-    layerGeometry->ConstructLayerGeometry(fWorldSizeY, fWallWorldGap, fWallThickness);
-    layerGeometry->ConstructTubeAndChamber();
+
+    WallGeometry* wallGeometry = new WallGeometry(fWorldLogical);
+    wallGeometry->ConstructWallGeometry();
+
+    LayerGeometry* layerGeometry = new LayerGeometry(wallGeometry -> GetInnerWallLogical());
+    layerGeometry->ConstructLayerGeometry(wallGeometry -> GetInnerWallHalfSizeX(),
+                                             wallGeometry -> GetInnerWallHalfSizeY(),
+                                             wallGeometry -> GetInnerWallHalfSizeZ());
+
+    
+    TubeAndChamber* tubeAndChamber = new TubeAndChamber(wallGeometry -> GetInnerWallLogical());
+    tubeAndChamber->ConstructTubeAndChamber(wallGeometry -> GetInnerWallHalfSizeX(),
+                                           wallGeometry -> GetInnerWallHalfSizeY(),
+                                           wallGeometry -> GetInnerWallHalfSizeZ(), 
+                                           layerGeometry -> GetTotalLayerThickness());  
+    //layerGeometry->ConstructTubeAndChamber();
   }
   return fWorldPhys;
 }
@@ -95,28 +104,11 @@ void RE03DetectorConstruction::DefineMaterials()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 void RE03DetectorConstruction::ConstructWorldGeometry()
 {
-  G4VSolid* worldSolid = new G4Box("World", fWorldSizeX, fWorldSizeY, fWorldSizeZ);
+  G4VSolid* worldSolid = new G4Box("World", fWorldHalfSizeX, fWorldHalfSizeY, fWorldHalfSizeZ);
   fWorldLogical = new G4LogicalVolume(worldSolid, fMaterial -> GetAir(), "World");
   fWorldPhys = new G4PVPlacement(0, G4ThreeVector(), fWorldLogical, "World", 0, false, 0);
 }
-
-void RE03DetectorConstruction::ConstructOuterWallGeometry()
-{
-  G4VSolid* outerWallSolid = new G4Box("OuterWall", OuterWallSizeX, OuterWallSizeY, OuterWallSizeZ);
-  fOuterWallLogical = new G4LogicalVolume(outerWallSolid, fMaterial -> GetIron(), "OuterWall");
-  fOuterWallPhys = new G4PVPlacement(0, G4ThreeVector(), fOuterWallLogical, "OuterWall", fWorldLogical,
-                                     false, 0);
-  fOuterWallLogical -> SetVisAttributes(new G4VisAttributes(G4Colour::Cyan()));
-}
-
-void RE03DetectorConstruction::ConstructInnerWallGeometry()
-{
-  G4VSolid* innerWallSolid = new G4Box("InnerWall", InnerWallSizeX, InnerWallSizeY, InnerWallSizeZ);
-  fInnerWallLogical = new G4LogicalVolume(innerWallSolid, fMaterial -> GetAir(), "InnerWall");
-  fInnerWallPhys = new G4PVPlacement(0, G4ThreeVector(), fInnerWallLogical, "InnerWall",
-                                     fOuterWallLogical, false, 0);
-  fInnerWallLogical -> SetVisAttributes(new G4VisAttributes(G4Colour::Yellow()));
-}
+/*
 void RE03DetectorConstruction::UpdateGeometry()
 { 
   OuterWallSizeX = fWorldSizeX - 2 * fWallWorldGap;
@@ -138,18 +130,15 @@ void RE03DetectorConstruction::UpdateGeometry()
                                                            InnerWallSizeZ));
   }
 }
+*/
 void RE03DetectorConstruction::SetWorldSize(G4double x, G4double y, G4double z)
 {
-  fWorldSizeX = x;
-  fWorldSizeY = y;
-  fWorldSizeZ = z;
-  UpdateGeometry();
+  fWorldHalfSizeX = x;
+  fWorldHalfSizeY = y;
+  fWorldHalfSizeZ = z;
+  //UpdateGeometry();
 }
-void RE03DetectorConstruction::SetWallThickness(G4double t)
-{
-  fWallThickness = t;
-  UpdateGeometry();
-}
+
 void RE03DetectorConstruction::ConstructSDandField()
 {
   ;

@@ -22,6 +22,7 @@ public:
   G4Material* GetAir();
   G4Material* GetVacuum();
   G4Material* GetTissue();
+  G4Material* GetPexiGlass();
 
 private:
   void ConstructHDConcrete();
@@ -33,6 +34,7 @@ private:
   void ConstructAir();
   void ConstructVacuum();
   void Constructtissue();
+  void ConstructPexiGlass();
 private:
   G4Material* fHDConcrete;
   G4Material* fBoronPolyethylene;
@@ -43,6 +45,7 @@ private:
   G4Material* fAir;
   G4Material* fVacuum;
   G4Material* fTissue;
+  G4Material* fPexiGlass;
 
   /*
   Defining general elements here

@@ -6,7 +6,8 @@
 #include "G4Material.hh"
 #include "G4ThreeVector.hh"
 #include "Material.hh"
-static const G4double inch = 2.54 * cm;
+#include "units.hh"
+
 class LayerGeometry
 {
 public:
@@ -15,12 +16,12 @@ public:
 
 public:
     void ConstructLayerGeometry(G4double, G4double, G4double);
-    void ConstructTubeAndChamber();
     void SetLayer1Thickness(G4double thickness);
     void SetLayer2Thickness(G4double thickness); 
     void SetLayer3Thickness(G4double thickness); 
     void SetLayer4Thickness(G4double thickness);
     void SetLayer5Thickness(G4double thickness);
+    G4double GetTotalLayerThickness() const;
 
 private:
     void ConstructLayer1();
@@ -28,12 +29,10 @@ private:
     void ConstructLayer3();
     void ConstructLayer4();
     void ConstructLayer5();
-    void ConstructBeamTube();
-    void ConstructHEELChamber();
     void UpdateGeometry();
 
 private:
-    G4LogicalVolume* finnerWorldLogical;
+    G4LogicalVolume* finnerWallLogical;
     Material* fMaterial;
 
     G4VPhysicalVolume* fLayer1Phys;
@@ -59,53 +58,28 @@ private:
     G4double fLayer5Thickness = 0.8 * m;
 
     //Defining world wall gap and wall thickness
-    G4double fWallWorldGap = 1. * m;
-    G4double fWallThickness = 1. * m;
-    G4double fWorldYHalfSize = 10. * m;
-
-    //Layer coordinates
-    G4double fLayer1YCoord = fWorldYHalfSize - (fWallWorldGap + fWallThickness)- fLayer1Thickness / 2;
-    G4double fLayer2YCoord = fLayer1YCoord - fLayer1Thickness / 2 - fLayer2Thickness / 2;
-    G4double fLayer3YCoord = fLayer2YCoord - fLayer2Thickness / 2 - fLayer3Thickness / 2;
-    G4double fLayer4YCoord = fLayer3YCoord - fLayer3Thickness / 2 - fLayer4Thickness / 2;
-    G4double fLayer5YCoord = fLayer4YCoord - fLayer4Thickness / 2 - fLayer5Thickness / 2;
-
-    G4double fLayerXCoord = 3. * m;
-    G4double fLayerZCoord = 3. * m;
-
-    
-    G4ThreeVector fLayer1Coord = G4ThreeVector(fLayerXCoord, fLayer1YCoord, fLayerZCoord);
-    G4ThreeVector fLayer2Coord = G4ThreeVector(fLayerXCoord, fLayer2YCoord, fLayerZCoord);
-    G4ThreeVector fLayer3Coord = G4ThreeVector(fLayerXCoord, fLayer3YCoord, fLayerZCoord);
-    G4ThreeVector fLayer4Coord = G4ThreeVector(fLayerXCoord, fLayer4YCoord, fLayerZCoord);
-    G4ThreeVector fLayer5Coord = G4ThreeVector(fLayerXCoord, fLayer5YCoord, fLayerZCoord);
+    G4double fInnerWallHalfSizeX;
+    G4double fInnerWallHalfSizeY;
+    G4double fInnerWallHalfSizeZ;
 
     //Layer cross section heigh and width
     G4double fLayerSizeX = (1 * 0.5) * m;
     G4double fLayerSizeZ = (1 * 0.5) * m;
 
-    /*
-    Beam Tube Parameters
-    */
-    G4double fBeamTubeThickness = 0.156 * inch;
-    G4double fBeamTubeOuterRadius = 6. * inch;
-    G4double fBeamTubeInnerRadius = fBeamTubeOuterRadius - fBeamTubeThickness;
-    G4double fBeamTubeHalfLength = 4 * m;
+    //Layer coordinates
+    G4double fLayer1YCoord;
+    G4double fLayer2YCoord;
+    G4double fLayer3YCoord;
+    G4double fLayer4YCoord;
+    G4double fLayer5YCoord;
 
-    G4double fBeamTubeXCoord;
-    G4double fBeamTubeYCoord;
-    G4double fBeamTubeZCoord;
+    G4ThreeVector fLayer1Coord;
+    G4ThreeVector fLayer2Coord;
+    G4ThreeVector fLayer3Coord;
+    G4ThreeVector fLayer4Coord;
+    G4ThreeVector fLayer5Coord;
 
-
-    /*
-    HEEL Chamber Parameters
-    */  
-    G4double fChamberHeight = 1. * m; 
-    G4double fChamberWidth = 1. * m; 
-    G4double fChamberLength = 2. * m;
-    G4double fChamberSideThickness = 1.25 * inch;
-    G4double fChamberBottomThickness = 1.5 * inch;
-    G4double fChamberTopThickness = 1. * inch;
-
+    G4double fLayerXCoord;
+    G4double fLayerZCoord;
 
 };

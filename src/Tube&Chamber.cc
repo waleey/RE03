@@ -63,7 +63,7 @@ void TubeAndChamber::ConstructBeamTube()
     of the Outer Tube.
     */
     G4VSolid* beamTubeInnerSolid = new G4Tubs("BeamInnerTube", 0., fBeamTubeInnerRadius, tubeLength / 2, 0., 360. * deg);
-    G4LogicalVolume* beamTubeInnerLogical = new G4LogicalVolume(beamTubeInnerSolid, fMaterial -> GetAir(), "BeamInnerTube");
+    G4LogicalVolume* beamTubeInnerLogical = new G4LogicalVolume(beamTubeInnerSolid, fMaterial -> GetVacuum(), "BeamInnerTube");
     new G4PVPlacement(0, G4ThreeVector(0, 0, 0), beamTubeInnerLogical, "BeamTubeInnerPhys", beamTubeOuterLogical, false, 0);
 
     beamTubeInnerLogical->SetVisAttributes(new G4VisAttributes(G4Colour::Red()));
@@ -130,7 +130,7 @@ void TubeAndChamber::ConstructHEELChamber()
 
     //Creating the inner chamber
     G4VSolid* innerChamberSolid = new G4Box("InnerChamber", innerChamberHalfSizeX, innerChamberHalfSizeY, innerChamberHalfSizeZ);
-    G4LogicalVolume* innerChamberLogical = new G4LogicalVolume(innerChamberSolid, fMaterial -> GetAir(), "InnerChamber");
+    G4LogicalVolume* innerChamberLogical = new G4LogicalVolume(innerChamberSolid, fMaterial -> GetVacuum(), "InnerChamber");
     new G4PVPlacement(0, G4ThreeVector(0, 0, 0), innerChamberLogical, "InnerChamberPhys",
                                                   chamberLogical, false, 0);
     innerChamberLogical->SetVisAttributes(new G4VisAttributes(G4Colour::Red()));

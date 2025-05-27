@@ -6,5 +6,6 @@
 
 extern const double inch;
 extern const double foot;
+extern const double dyne;
 
 #endif

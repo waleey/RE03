@@ -1,6 +1,7 @@
 #include "Material.hh"
 #include "G4UnitsTable.hh"
 #include "G4NistManager.hh"
+#include "units.hh"
 Material::Material() : 
   fHDConcrete(nullptr),
   fBoronPolyethylene(nullptr),
@@ -93,15 +94,25 @@ void Material::ConstructAir()
 }
 void Material::ConstructVacuum()
 {
-  G4double density     = 1.e-25*g/cm3;                //from PhysicalConstants.h
-  G4double pressure    = 1.e-6*133 * pascal;
-  G4double temperature = 0.1*kelvin;
-  G4double Z = 1; 
-  G4double A = 1.01 * g / mole;
-  fVacuum = new G4Material("Vacuul", Z, A, density,
+  G4double pressure    = 1.e-6*1332.8 * dyne/cm2;
+  G4double temperature = 298*kelvin;
+  G4double density     = pressure / (1.3807e-16 * ((cm2 * g) / (second*second * kelvin)) * temperature) ;                //from PhysicalConstants.h
+  G4double Z = 7.; 
+  G4double A = 14.01*g/mole;
+  G4int ncomponents = 1;
+  fVacuum = new G4Material("Vacuum", density, ncomponents,
                    kStateGas, temperature, pressure);
-  
-  fVacuum->AddElement(elH, 100 * perCent);
+  fVacuum->AddElement(elN, 1.);
+  //fVacuum->AddElement(elO, 0.20);
+
+}
+void Material::ConstructPexiGlass()
+{
+    G4double density = 1.19*g/cm3;
+    fPexiGlass = new G4Material("Plexiglass", density, 3);
+    fPexiGlass->AddElement(elH,0.08);
+    fPexiGlass->AddElement(elC,0.60);
+    fPexiGlass->AddElement(elO,0.32);
 }
 G4Material* Material::GetHDConcrete() 
 {
@@ -150,4 +161,10 @@ G4Material* Material::GetVacuum()
   ConstructVacuum();
   G4cout << "Vacuum is successfully constructed" << G4endl;
   return fVacuum;
+}
+G4Material* Material::GetPexiGlass()
+{
+  ConstructPexiGlass();
+  G4cout << "PexiGlass is successfully constructed" << G4endl;
+  return fPexiGlass;
 }

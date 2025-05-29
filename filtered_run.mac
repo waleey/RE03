@@ -1,0 +1,126 @@
+#########################################################
+#  Macro file for filtering scoring mesh
+#  based on particle type.
+#  Scoring meshes are defined for: e-, protons, neutrons, gammas, 
+#  alphas, and muons
+#########################################################
+
+#Defining the scoring meshes
+/score/create/boxMesh boxMesh
+/score/mesh/boxSize 15. 20. 5. m
+/score/mesh/nBin 50 50 50
+
+
+/score/quantity/energyDeposit eDepElectron
+/score/filter/particle electronEnergy e-
+/score/quantity/doseDeposit dDepElectron
+/score/filter/particle electronDose e-
+/score/quantity/cellFlux fluxElectron
+/score/filter/particle electronFlux e-
+
+/score/quantity/energyDeposit eDepProton
+/score/filter/particle protonEnergy proton
+/score/quantity/doseDeposit dDepProton
+/score/filter/particle protonDose proton
+/score/quantity/cellFlux fluxProton
+/score/filter/particle protonFlux proton
+
+/score/quantity/energyDeposit eDepNeutron
+/score/filter/particle neutronEnergy neutron
+/score/quantity/doseDeposit dDepNeutron
+/score/filter/particle neutronDose neutron
+/score/quantity/cellFlux fluxNeutron
+/score/filter/particle neutronFlux neutron
+
+/score/quantity/energyDeposit eDepGamma
+/score/filter/particle gammaEnergy gamma
+/score/quantity/doseDeposit dDepGamma
+/score/filter/particle gammaDose gamma
+/score/quantity/cellFlux fluxGamma
+/score/filter/particle gammaFlux gamma
+
+/score/quantity/energyDeposit eDepAlpha
+/score/filter/particle alphaEnergy alpha
+/score/quantity/doseDeposit dDepAlpha
+/score/filter/particle alphaDose alpha
+/score/quantity/cellFlux fluxAlpha
+/score/filter/particle alphaFlux alpha
+
+/score/quantity/energyDeposit eDepMuon
+/score/filter/particle muonEnergy muon
+/score/quantity/doseDeposit dDepMuon
+/score/filter/particle muonDose mu
+/score/quantity/cellFlux fluxMuon
+/score/filter/particle MuonFlux mu
+
+/score/close
+/score/list
+
+##Defining beam parameters
+/gps/pos/shape Circle
+/gps/pos/centre 8.74395 -4.93871 -0.561975 m
+/gps/pos/radius 0. mm
+/gps/pos/sigma_r 2. mm
+/gps/particle e-
+/gps/pos/type Beam
+
+# the incident surface is in the x-z plane
+/gps/pos/rot1 1 0 0
+/gps/pos/rot2 0 0 1
+
+/gps/ang/rot1 1 0 0
+/gps/ang/rot2 0 0 1 
+/gps/ang/type beam1d
+/gps/ang/maxtheta 0.370 deg
+
+/gps/ene/type Gauss
+/gps/ene/mono 125 GeV
+/gps/ene/sigma 2.25 GeV
+
+/run/beamOn 5
+
+#Dump score to files.
+/score/dumpQuantityToFile boxMesh eDepElectron output/eDepElectron.txt
+/score/dumpQuantityToFile boxMesh dDepElectron output/dDepElectron.txt
+/score/dumpQuantityToFile boxMesh fluxElectron output/fluxElectron.txt
+
+/score/dumpQuantityToFile boxMesh eDepProton output/eDepProton.txt
+/score/dumpQuantityToFile boxMesh dDepProton output/dDepProton.txt
+/score/dumpQuantityToFile boxMesh fluxProton output/fluxProton.txt
+
+/score/dumpQuantityToFile boxMesh eDepNeutron output/eDepNeutron.txt
+/score/dumpQuantityToFile boxMesh dDepNeutron output/dDepNeutron.txt
+/score/dumpQuantityToFile boxMesh fluxNeutron output/fluxNeutron.txt
+
+/score/dumpQuantityToFile boxMesh eDepGamma output/eDepGamma.txt
+/score/dumpQuantityToFile boxMesh dDepGamma output/dDepGamma.txt
+/score/dumpQuantityToFile boxMesh fluxGamma output/fluxGamma.txt
+
+/score/dumpQuantityToFile boxMesh eDepAlpha output/eDepAlpha.txt
+/score/dumpQuantityToFile boxMesh dDepAlpha output/dDepAlpha.txt
+/score/dumpQuantityToFile boxMesh fluxAlpha output/fluxAlpha.txt
+
+/score/dumpQuantityToFile boxMesh eDepMuon output/eDepMuon.txt
+/score/dumpQuantityToFile boxMesh dDepMuon output/dDepMuon.txt
+/score/dumpQuantityToFile boxMesh fluxMuon output/fluxMuon.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

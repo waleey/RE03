@@ -48,6 +48,4 @@ private:
     G4double fInnerWallHalfSizeX = fOuterWallHalfSizeX - fXWallThickness;
     G4double fInnerWallHalfSizeY = fOuterWallHalfSizeY - fYWallThickness;
     G4double fInnerWallHalfSizeZ = fOuterWallHalfSizeZ - fZWallThickness;
-
-
 };

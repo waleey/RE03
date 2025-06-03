@@ -19,6 +19,9 @@ public:
     G4double GetInnerWallHalfSizeX() const { return fInnerWallHalfSizeX; }
     G4double GetInnerWallHalfSizeY() const { return fInnerWallHalfSizeY; }
     G4double GetInnerWallHalfSizeZ() const { return fInnerWallHalfSizeZ; }
+    G4double GetOuterWallHalfSizeX() const { return fOuterWallHalfSizeX; }
+    G4double GetOuterWallHalfSizeY() const { return fOuterWallHalfSizeY; }
+    G4double GetOuterWallHalfSizeZ() const { return fOuterWallHalfSizeZ; }
 
 
 private:

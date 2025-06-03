@@ -51,6 +51,7 @@
 #include "Material.hh"
 #include "WallGeometry.hh"
 #include "Tube&Chamber.hh"
+#include "PhantomGeometry.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 RE03DetectorConstruction::RE03DetectorConstruction()
@@ -90,7 +91,13 @@ G4VPhysicalVolume* RE03DetectorConstruction::Construct()
                                            wallGeometry -> GetInnerWallHalfSizeY(),
                                            wallGeometry -> GetInnerWallHalfSizeZ(), 
                                            layerGeometry -> GetTotalLayerThickness());  
-    //layerGeometry->ConstructTubeAndChamber();
+    PhantomGeometry* phantomGeometry = new PhantomGeometry(fWorldLogical);
+    phantomGeometry->ConstructPhantomGeometry(wallGeometry -> GetInnerWallHalfSizeX(),
+                                              wallGeometry -> GetInnerWallHalfSizeY(),
+                                              wallGeometry -> GetInnerWallHalfSizeZ(),
+                                              wallGeometry -> GetOuterWallHalfSizeX(),
+                                              wallGeometry -> GetOuterWallHalfSizeY(),
+                                              wallGeometry -> GetOuterWallHalfSizeZ());
   }
   return fWorldPhys;
 }

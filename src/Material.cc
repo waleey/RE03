@@ -114,6 +114,11 @@ void Material::ConstructPexiGlass()
     fPexiGlass->AddElement(elC,0.60);
     fPexiGlass->AddElement(elO,0.32);
 }
+void Material::ConstructConcrete()
+{
+  G4NistManager* NISTman = G4NistManager::Instance();
+  fConcrete = NISTman->FindOrBuildMaterial("G4_CONCRETE");
+}
 G4Material* Material::GetHDConcrete() 
 {
   ConstructHDConcrete();
@@ -167,4 +172,10 @@ G4Material* Material::GetPexiGlass()
   ConstructPexiGlass();
   G4cout << "PexiGlass is successfully constructed" << G4endl;
   return fPexiGlass;
+}
+G4Material* Material::GetConcrete()
+{
+  ConstructConcrete();
+  G4cout << "Concrete is successfully constructed" << G4endl;
+  return fConcrete;
 }

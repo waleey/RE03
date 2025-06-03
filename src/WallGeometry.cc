@@ -24,7 +24,7 @@ void WallGeometry::ConstructWallGeometry()
 void WallGeometry::ConstructOuterWallGeometry()
 {
     G4VSolid* outerWallSolid = new G4Box("OuterWall", fOuterWallHalfSizeX, fOuterWallHalfSizeY, fOuterWallHalfSizeZ);
-    fOuterWallLogical = new G4LogicalVolume(outerWallSolid, fMaterial->GetHDConcrete(), "OuterWall");
+    fOuterWallLogical = new G4LogicalVolume(outerWallSolid, fMaterial->GetConcrete(), "OuterWall");
     new G4PVPlacement(0, G4ThreeVector(), fOuterWallLogical, "OuterWall", fInnerWorldLogical,
                                       false, 0);
     fOuterWallLogical->SetVisAttributes(new G4VisAttributes(G4Colour::Cyan()));

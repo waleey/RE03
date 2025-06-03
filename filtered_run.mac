@@ -46,12 +46,19 @@
 /score/quantity/cellFlux fluxAlpha
 /score/filter/particle alphaFlux alpha
 
-/score/quantity/energyDeposit eDepMuon
-/score/filter/particle muonEnergy muon
-/score/quantity/doseDeposit dDepMuon
-/score/filter/particle muonDose mu
-/score/quantity/cellFlux fluxMuon
-/score/filter/particle MuonFlux mu
+/score/quantity/energyDeposit eDepMuonPlus
+/score/filter/particle muonPlusEnergy mu+
+/score/quantity/doseDeposit dDepMuonPlus
+/score/filter/particle muonPlusDose mu+
+/score/quantity/cellFlux fluxMuonPlus
+/score/filter/particle MuonPlusFlux mu+
+
+/score/quantity/energyDeposit eDepMuonMinus
+/score/filter/particle muonMinusEnergy mu-
+/score/quantity/doseDeposit dDepMuonMinus
+/score/filter/particle muonMinusDose mu-
+/score/quantity/cellFlux fluxMuonMinus
+/score/filter/particle MuonMinusFlux mu-
 
 /score/close
 /score/list
@@ -59,8 +66,8 @@
 ##Defining beam parameters
 /gps/pos/shape Circle
 /gps/pos/centre 8.74395 -4.93871 -0.561975 m
-/gps/pos/radius 0. mm
-/gps/pos/sigma_r 2. mm
+/gps/pos/radius 20. um
+/gps/pos/sigma_r 0. mm
 /gps/particle e-
 /gps/pos/type Beam
 
@@ -80,31 +87,33 @@
 /run/beamOn 5
 
 #Dump score to files.
-/score/dumpQuantityToFile boxMesh eDepElectron output/eDepElectron.txt
-/score/dumpQuantityToFile boxMesh dDepElectron output/dDepElectron.txt
-/score/dumpQuantityToFile boxMesh fluxElectron output/fluxElectron.txt
+/score/dumpQuantityToFile boxMesh eDepElectron filtered_output/eDepElectron.txt
+/score/dumpQuantityToFile boxMesh dDepElectron filtered_output/dDepElectron.txt
+/score/dumpQuantityToFile boxMesh fluxElectron filtered_output/fluxElectron.txt
 
-/score/dumpQuantityToFile boxMesh eDepProton output/eDepProton.txt
-/score/dumpQuantityToFile boxMesh dDepProton output/dDepProton.txt
-/score/dumpQuantityToFile boxMesh fluxProton output/fluxProton.txt
+/score/dumpQuantityToFile boxMesh eDepProton filtered_output/eDepProton.txt
+/score/dumpQuantityToFile boxMesh dDepProton filtered_output/dDepProton.txt
+/score/dumpQuantityToFile boxMesh fluxProton filtered_output/fluxProton.txt
 
-/score/dumpQuantityToFile boxMesh eDepNeutron output/eDepNeutron.txt
-/score/dumpQuantityToFile boxMesh dDepNeutron output/dDepNeutron.txt
-/score/dumpQuantityToFile boxMesh fluxNeutron output/fluxNeutron.txt
+/score/dumpQuantityToFile boxMesh eDepNeutron filtered_output/eDepNeutron.txt
+/score/dumpQuantityToFile boxMesh dDepNeutron filtered_output/dDepNeutron.txt
+/score/dumpQuantityToFile boxMesh fluxNeutron filtered_output/fluxNeutron.txt
 
-/score/dumpQuantityToFile boxMesh eDepGamma output/eDepGamma.txt
-/score/dumpQuantityToFile boxMesh dDepGamma output/dDepGamma.txt
-/score/dumpQuantityToFile boxMesh fluxGamma output/fluxGamma.txt
+/score/dumpQuantityToFile boxMesh eDepGamma filtered_output/eDepGamma.txt
+/score/dumpQuantityToFile boxMesh dDepGamma filtered_output/dDepGamma.txt
+/score/dumpQuantityToFile boxMesh fluxGamma filtered_output/fluxGamma.txt
 
-/score/dumpQuantityToFile boxMesh eDepAlpha output/eDepAlpha.txt
-/score/dumpQuantityToFile boxMesh dDepAlpha output/dDepAlpha.txt
-/score/dumpQuantityToFile boxMesh fluxAlpha output/fluxAlpha.txt
+/score/dumpQuantityToFile boxMesh eDepAlpha filtered_output/eDepAlpha.txt
+/score/dumpQuantityToFile boxMesh dDepAlpha filtered_output/dDepAlpha.txt
+/score/dumpQuantityToFile boxMesh fluxAlpha filtered_output/fluxAlpha.txt
 
-/score/dumpQuantityToFile boxMesh eDepMuon output/eDepMuon.txt
-/score/dumpQuantityToFile boxMesh dDepMuon output/dDepMuon.txt
-/score/dumpQuantityToFile boxMesh fluxMuon output/fluxMuon.txt
+/score/dumpQuantityToFile boxMesh eDepMuonPlus filtered_output/eDepMuonPlus.txt
+/score/dumpQuantityToFile boxMesh dDepMuonPlus filtered_output/dDepMuonPlus.txt
+/score/dumpQuantityToFile boxMesh fluxMuonPlus filtered_output/fluxMuonPlus.txt
 
-
+/score/dumpQuantityToFile boxMesh eDepMuonMinus filtered_output/eDepMuonMinus.txt
+/score/dumpQuantityToFile boxMesh dDepMuonMinus filtered_output/dDepMuonMinus.txt
+/score/dumpQuantityToFile boxMesh fluxMuonMinus filtered_output/fluxMuonMinus.txt
 
 
 

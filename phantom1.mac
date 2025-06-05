@@ -1,5 +1,8 @@
 #Defining Volume and Scorer for Phantom 1
-/score/create/realWorldLogVol Phantom1Logical
+/score/create/cylinderMesh Phantom1Mesh
+/score/mesh/cylinderSize 36 170. cm
+/score/mesh/translate/xyz 874.396 1651.44 -9.98 cm
+/score/mesh/nBin 30 30 30
 
 #Defining Scorers
 /score/quantity/energyDeposit eDepElectron

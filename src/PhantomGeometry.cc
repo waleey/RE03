@@ -43,7 +43,7 @@ void PhantomGeometry::ConstructPhantom1()
 {
     G4double xCoord = fInnerWallHalfSizeX - 9 * foot - 10.5 * inch;
     G4double yCoord = fOuterWallHalfSizeY + 3 * foot + fHumanRadius;
-    G4double zCoord = -fInnerWallHalfSizeZ + fHumanHalfHeight;
+    G4double zCoord = fInnerWallHalfSizeZ - fHumanHalfHeight;
 
     G4VSolid* phantom1Solid = new G4Tubs("Phantom1Solid", 0, fHumanRadius, fHumanHalfHeight, 0, 360 * deg);
     G4LogicalVolume* phantom1Logical = new G4LogicalVolume(phantom1Solid, fMaterial, "Phantom1Logical");
@@ -89,11 +89,11 @@ void PhantomGeometry::ConstructPhantom4()
 }
 void PhantomGeometry::ConstructPhantom5()
 {
-    G4double xCoord = fInnerWallHalfSizeX - 22 * foot - 1.5 * m;
-    G4double yCoord = 2 * m;
+    G4double xCoord = fInnerWallHalfSizeX - 22 * foot - 1.5 * m + 2 * m;
+    G4double yCoord = 7 * m;
     G4double zCoord = fInnerWallHalfSizeZ - fHumanHalfHeight;
 
-    G4VSolid* phantom5Solid = new G4Tubs("Phantom5Solid", 0, fHumanRadius, fHumanHalfHeight, 0, 360 * deg);
+    G4VSolid* phantom5Solid = new G4Tubs("Phantom5Solid", 0, fHumanRadius * 2, fHumanHalfHeight, 0, 360 * deg);
     G4LogicalVolume* phantom5Logical = new G4LogicalVolume(phantom5Solid, fMaterial, "Phantom5Logical");
     new G4PVPlacement(0, G4ThreeVector(xCoord, yCoord, zCoord), phantom5Logical, "Phantom5", fInnerWorldLogical,
                       false, 0);

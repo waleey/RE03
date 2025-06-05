@@ -31,114 +31,115 @@
 /gps/ene/mono 125 GeV
 /gps/ene/sigma 2.25 GeV
 
-/run/beamOn 5
+/run/printProgress 1000
+/run/beamOn 10
 
 #Dumping phantom1 outputs to file
-/score/dumpQuantityToFile Phantom1Logical eDepElectron phantom_output/phantom1/eDepElectron.txt
-/score/dumpQuantityToFile Phantom1Logical dDepElectron phantom_output/phantom1/dDepElectron.txt
+/score/dumpQuantityToFile Phantom1Mesh eDepElectron phantom_output/phantom1/eDepElectron.txt
+/score/dumpQuantityToFile Phantom1Mesh dDepElectron phantom_output/phantom1/dDepElectron.txt
 
-/score/dumpQuantityToFile Phantom1Logical eDepProton phantom_output/phantom1/eDepProton.txt
-/score/dumpQuantityToFile Phantom1Logical dDepProton phantom_output/phantom1/dDepProton.txt
+/score/dumpQuantityToFile Phantom1Mesh eDepProton phantom_output/phantom1/eDepProton.txt
+/score/dumpQuantityToFile Phantom1Mesh dDepProton phantom_output/phantom1/dDepProton.txt
 
-/score/dumpQuantityToFile Phantom1Logical eDepNeutron phantom_output/phantom1/eDepNeutron.txt
-/score/dumpQuantityToFile Phantom1Logical dDepNeutron phantom_output/phantom1/dDepNeutron.txt
+/score/dumpQuantityToFile Phantom1Mesh eDepNeutron phantom_output/phantom1/eDepNeutron.txt
+/score/dumpQuantityToFile Phantom1Mesh dDepNeutron phantom_output/phantom1/dDepNeutron.txt
 
-/score/dumpQuantityToFile Phantom1Logical eDepGamma phantom_output/phantom1/eDepGamma.txt
-/score/dumpQuantityToFile Phantom1Logical dDepGamma phantom_output/phantom1/dDepGamma.txt
+/score/dumpQuantityToFile Phantom1Mesh eDepGamma phantom_output/phantom1/eDepGamma.txt
+/score/dumpQuantityToFile Phantom1Mesh dDepGamma phantom_output/phantom1/dDepGamma.txt
 
-/score/dumpQuantityToFile Phantom1Logical eDepAlpha phantom_output/phantom1/eDepAlpha.txt
-/score/dumpQuantityToFile Phantom1Logical dDepAlpha phantom_output/phantom1/dDepAlpha.txt
+/score/dumpQuantityToFile Phantom1Mesh eDepAlpha phantom_output/phantom1/eDepAlpha.txt
+/score/dumpQuantityToFile Phantom1Mesh dDepAlpha phantom_output/phantom1/dDepAlpha.txt
 
-/score/dumpQuantityToFile Phantom1Logical eDepMuonPlus phantom_output/phantom1/eDepMuonPlus.txt
-/score/dumpQuantityToFile Phantom1Logical dDepMuonPlus phantom_output/phantom1/dDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom1Mesh eDepMuonPlus phantom_output/phantom1/eDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom1Mesh dDepMuonPlus phantom_output/phantom1/dDepMuonPlus.txt
 
-/score/dumpQuantityToFile Phantom1Logical eDepMuonMinus phantom_output/phantom1/eDepMuonMinus.txt
-/score/dumpQuantityToFile Phantom1Logical dDepMuonMinus phantom_output/phantom1/dDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom1Mesh eDepMuonMinus phantom_output/phantom1/eDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom1Mesh dDepMuonMinus phantom_output/phantom1/dDepMuonMinus.txt
 
 #Dumping phantom2 outputs to file
-/score/dumpQuantityToFile Phantom2Logical eDepElectron phantom_output/phantom2/eDepElectron.txt
-/score/dumpQuantityToFile Phantom2Logical dDepElectron phantom_output/phantom2/dDepElectron.txt
+/score/dumpQuantityToFile Phantom2Mesh eDepElectron phantom_output/phantom2/eDepElectron.txt
+/score/dumpQuantityToFile Phantom2Mesh dDepElectron phantom_output/phantom2/dDepElectron.txt
 
-/score/dumpQuantityToFile Phantom2Logical eDepProton phantom_output/phantom2/eDepProton.txt
-/score/dumpQuantityToFile Phantom2Logical dDepProton phantom_output/phantom2/dDepProton.txt
+/score/dumpQuantityToFile Phantom2Mesh eDepProton phantom_output/phantom2/eDepProton.txt
+/score/dumpQuantityToFile Phantom2Mesh dDepProton phantom_output/phantom2/dDepProton.txt
 
-/score/dumpQuantityToFile Phantom2Logical eDepNeutron phantom_output/phantom2/eDepNeutron.txt
-/score/dumpQuantityToFile Phantom2Logical dDepNeutron phantom_output/phantom2/dDepNeutron.txt
+/score/dumpQuantityToFile Phantom2Mesh eDepNeutron phantom_output/phantom2/eDepNeutron.txt
+/score/dumpQuantityToFile Phantom2Mesh dDepNeutron phantom_output/phantom2/dDepNeutron.txt
 
-/score/dumpQuantityToFile Phantom2Logical eDepGamma phantom_output/phantom2/eDepGamma.txt
-/score/dumpQuantityToFile Phantom2Logical dDepGamma phantom_output/phantom2/dDepGamma.txt
+/score/dumpQuantityToFile Phantom2Mesh eDepGamma phantom_output/phantom2/eDepGamma.txt
+/score/dumpQuantityToFile Phantom2Mesh dDepGamma phantom_output/phantom2/dDepGamma.txt
 
-/score/dumpQuantityToFile Phantom2Logical eDepAlpha phantom_output/phantom2/eDepAlpha.txt
-/score/dumpQuantityToFile Phantom2Logical dDepAlpha phantom_output/phantom2/dDepAlpha.txt
+/score/dumpQuantityToFile Phantom2Mesh eDepAlpha phantom_output/phantom2/eDepAlpha.txt
+/score/dumpQuantityToFile Phantom2Mesh dDepAlpha phantom_output/phantom2/dDepAlpha.txt
 
-/score/dumpQuantityToFile Phantom2Logical eDepMuonPlus phantom_output/phantom2/eDepMuonPlus.txt
-/score/dumpQuantityToFile Phantom2Logical dDepMuonPlus phantom_output/phantom2/dDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom2Mesh eDepMuonPlus phantom_output/phantom2/eDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom2Mesh dDepMuonPlus phantom_output/phantom2/dDepMuonPlus.txt
 
-/score/dumpQuantityToFile Phantom2Logical eDepMuonMinus phantom_output/phantom2/eDepMuonMinus.txt
-/score/dumpQuantityToFile Phantom2Logical dDepMuonMinus phantom_output/phantom2/dDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom2Mesh eDepMuonMinus phantom_output/phantom2/eDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom2Mesh dDepMuonMinus phantom_output/phantom2/dDepMuonMinus.txt
 
 #Dumping phantom3 outputs to file
-/score/dumpQuantityToFile Phantom3Logical eDepElectron phantom_output/phantom3/eDepElectron.txt
-/score/dumpQuantityToFile Phantom3Logical dDepElectron phantom_output/phantom3/dDepElectron.txt
+/score/dumpQuantityToFile Phantom3Mesh eDepElectron phantom_output/phantom3/eDepElectron.txt
+/score/dumpQuantityToFile Phantom3Mesh dDepElectron phantom_output/phantom3/dDepElectron.txt
 
-/score/dumpQuantityToFile Phantom3Logical eDepProton phantom_output/phantom3/eDepProton.txt
-/score/dumpQuantityToFile Phantom3Logical dDepProton phantom_output/phantom3/dDepProton.txt
+/score/dumpQuantityToFile Phantom3Mesh eDepProton phantom_output/phantom3/eDepProton.txt
+/score/dumpQuantityToFile Phantom3Mesh dDepProton phantom_output/phantom3/dDepProton.txt
 
-/score/dumpQuantityToFile Phantom3Logical eDepNeutron phantom_output/phantom3/eDepNeutron.txt
-/score/dumpQuantityToFile Phantom3Logical dDepNeutron phantom_output/phantom3/dDepNeutron.txt
+/score/dumpQuantityToFile Phantom3Mesh eDepNeutron phantom_output/phantom3/eDepNeutron.txt
+/score/dumpQuantityToFile Phantom3Mesh dDepNeutron phantom_output/phantom3/dDepNeutron.txt
 
-/score/dumpQuantityToFile Phantom3Logical eDepGamma phantom_output/phantom3/eDepGamma.txt
-/score/dumpQuantityToFile Phantom3Logical dDepGamma phantom_output/phantom3/dDepGamma.txt
+/score/dumpQuantityToFile Phantom3Mesh eDepGamma phantom_output/phantom3/eDepGamma.txt
+/score/dumpQuantityToFile Phantom3Mesh dDepGamma phantom_output/phantom3/dDepGamma.txt
 
-/score/dumpQuantityToFile Phantom3Logical eDepAlpha phantom_output/phantom3/eDepAlpha.txt
-/score/dumpQuantityToFile Phantom3Logical dDepAlpha phantom_output/phantom3/dDepAlpha.txt
+/score/dumpQuantityToFile Phantom3Mesh eDepAlpha phantom_output/phantom3/eDepAlpha.txt
+/score/dumpQuantityToFile Phantom3Mesh dDepAlpha phantom_output/phantom3/dDepAlpha.txt
 
-/score/dumpQuantityToFile Phantom3Logical eDepMuonPlus phantom_output/phantom3/eDepMuonPlus.txt
-/score/dumpQuantityToFile Phantom3Logical dDepMuonPlus phantom_output/phantom3/dDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom3Mesh eDepMuonPlus phantom_output/phantom3/eDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom3Mesh dDepMuonPlus phantom_output/phantom3/dDepMuonPlus.txt
 
-/score/dumpQuantityToFile Phantom3Logical eDepMuonMinus phantom_output/phantom3/eDepMuonMinus.txt
-/score/dumpQuantityToFile Phantom3Logical dDepMuonMinus phantom_output/phantom3/dDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom3Mesh eDepMuonMinus phantom_output/phantom3/eDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom3Mesh dDepMuonMinus phantom_output/phantom3/dDepMuonMinus.txt
 
 #Dumping phantom4 outputs to file
-/score/dumpQuantityToFile Phantom4Logical eDepElectron phantom_output/phantom4/eDepElectron.txt
-/score/dumpQuantityToFile Phantom4Logical dDepElectron phantom_output/phantom4/dDepElectron.txt
+/score/dumpQuantityToFile Phantom4Mesh eDepElectron phantom_output/phantom4/eDepElectron.txt
+/score/dumpQuantityToFile Phantom4Mesh dDepElectron phantom_output/phantom4/dDepElectron.txt
 
-/score/dumpQuantityToFile Phantom4Logical eDepProton phantom_output/phantom4/eDepProton.txt
-/score/dumpQuantityToFile Phantom4Logical dDepProton phantom_output/phantom4/dDepProton.txt
+/score/dumpQuantityToFile Phantom4Mesh eDepProton phantom_output/phantom4/eDepProton.txt
+/score/dumpQuantityToFile Phantom4Mesh dDepProton phantom_output/phantom4/dDepProton.txt
 
-/score/dumpQuantityToFile Phantom4Logical eDepNeutron phantom_output/phantom4/eDepNeutron.txt
-/score/dumpQuantityToFile Phantom4Logical dDepNeutron phantom_output/phantom4/dDepNeutron.txt
+/score/dumpQuantityToFile Phantom4Mesh eDepNeutron phantom_output/phantom4/eDepNeutron.txt
+/score/dumpQuantityToFile Phantom4Mesh dDepNeutron phantom_output/phantom4/dDepNeutron.txt
 
-/score/dumpQuantityToFile Phantom4Logical eDepGamma phantom_output/phantom4/eDepGamma.txt
-/score/dumpQuantityToFile Phantom4Logical dDepGamma phantom_output/phantom4/dDepGamma.txt
+/score/dumpQuantityToFile Phantom4Mesh eDepGamma phantom_output/phantom4/eDepGamma.txt
+/score/dumpQuantityToFile Phantom4Mesh dDepGamma phantom_output/phantom4/dDepGamma.txt
 
-/score/dumpQuantityToFile Phantom4Logical eDepAlpha phantom_output/phantom4/eDepAlpha.txt
-/score/dumpQuantityToFile Phantom4Logical dDepAlpha phantom_output/phantom4/dDepAlpha.txt
+/score/dumpQuantityToFile Phantom4Mesh eDepAlpha phantom_output/phantom4/eDepAlpha.txt
+/score/dumpQuantityToFile Phantom4Mesh dDepAlpha phantom_output/phantom4/dDepAlpha.txt
 
-/score/dumpQuantityToFile Phantom4Logical eDepMuonPlus phantom_output/phantom4/eDepMuonPlus.txt
-/score/dumpQuantityToFile Phantom4Logical dDepMuonPlus phantom_output/phantom4/dDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom4Mesh eDepMuonPlus phantom_output/phantom4/eDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom4Mesh dDepMuonPlus phantom_output/phantom4/dDepMuonPlus.txt
 
-/score/dumpQuantityToFile Phantom4Logical eDepMuonMinus phantom_output/phantom4/eDepMuonMinus.txt
-/score/dumpQuantityToFile Phantom4Logical dDepMuonMinus phantom_output/phantom4/dDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom4Mesh eDepMuonMinus phantom_output/phantom4/eDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom4Mesh dDepMuonMinus phantom_output/phantom4/dDepMuonMinus.txt
 
 #Dumping phantom5 outputs to file
-/score/dumpQuantityToFile Phantom5Logical eDepElectron phantom_output/phantom5/eDepElectron.txt
-/score/dumpQuantityToFile Phantom5Logical dDepElectron phantom_output/phantom5/dDepElectron.txt
+/score/dumpQuantityToFile Phantom5Mesh eDepElectron phantom_output/phantom5/eDepElectron.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepElectron phantom_output/phantom5/dDepElectron.txt
 
-/score/dumpQuantityToFile Phantom5Logical eDepProton phantom_output/phantom5/eDepProton.txt
-/score/dumpQuantityToFile Phantom5Logical dDepProton phantom_output/phantom5/dDepProton.txt
+/score/dumpQuantityToFile Phantom5Mesh eDepProton phantom_output/phantom5/eDepProton.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepProton phantom_output/phantom5/dDepProton.txt
 
-/score/dumpQuantityToFile Phantom5Logical eDepNeutron phantom_output/phantom5/eDepNeutron.txt
-/score/dumpQuantityToFile Phantom5Logical dDepNeutron phantom_output/phantom5/dDepNeutron.txt
+/score/dumpQuantityToFile Phantom5Mesh eDepNeutron phantom_output/phantom5/eDepNeutron.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepNeutron phantom_output/phantom5/dDepNeutron.txt
 
-/score/dumpQuantityToFile Phantom5Logical eDepGamma phantom_output/phantom5/eDepGamma.txt
-/score/dumpQuantityToFile Phantom5Logical dDepGamma phantom_output/phantom5/dDepGamma.txt
+/score/dumpQuantityToFile Phantom5Mesh eDepGamma phantom_output/phantom5/eDepGamma.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepGamma phantom_output/phantom5/dDepGamma.txt
 
-/score/dumpQuantityToFile Phantom5Logical eDepAlpha phantom_output/phantom5/eDepAlpha.txt
-/score/dumpQuantityToFile Phantom5Logical dDepAlpha phantom_output/phantom5/dDepAlpha.txt
+/score/dumpQuantityToFile Phantom5Mesh eDepAlpha phantom_output/phantom5/eDepAlpha.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepAlpha phantom_output/phantom5/dDepAlpha.txt
 
-/score/dumpQuantityToFile Phantom5Logical eDepMuonPlus phantom_output/phantom5/eDepMuonPlus.txt
-/score/dumpQuantityToFile Phantom5Logical dDepMuonPlus phantom_output/phantom5/dDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom5Mesh eDepMuonPlus phantom_output/phantom5/eDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepMuonPlus phantom_output/phantom5/dDepMuonPlus.txt
 
-/score/dumpQuantityToFile Phantom5Logical eDepMuonMinus phantom_output/phantom5/eDepMuonMinus.txt
-/score/dumpQuantityToFile Phantom5Logical dDepMuonMinus phantom_output/phantom5/dDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom5Mesh eDepMuonMinus phantom_output/phantom5/eDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepMuonMinus phantom_output/phantom5/dDepMuonMinus.txt

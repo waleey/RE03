@@ -31,6 +31,6 @@ private:
     G4double fOuterWallHalfSizeY;
     G4double fOuterWallHalfSizeZ;
 
-    G4double fHumanRadius = 12 * 2 * cm;
+    G4double fHumanRadius = 12 * 2 * 1.5 * cm;
     G4double fHumanHalfHeight = 85 * 2 * cm;
 };

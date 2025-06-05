@@ -34,6 +34,8 @@
 #include "G4ParticleTypes.hh"
 #include "G4ClassificationOfNewTrack.hh"
 #include "RE03PrimaryGeneratorAction.hh"
+#include "RunAction.hh"
+#include "SteppingAction.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 RE03ActionInitialization::RE03ActionInitialization()
@@ -62,8 +64,9 @@ void RE03ActionInitialization::BuildForMaster() const
     runManager->SetDefaultClassification(G4Positron::Definition(),fSubEvent_0);
     runManager->SetDefaultClassification(G4Gamma::Definition(),fSubEvent_0);
 
-    // primary generator action is defined to the master thread 
+    // primary generator and run action action is defined to the master thread 
     SetUserAction(new RE03PrimaryGeneratorAction);
+    SetUserAction(new RunAction);
   }
 }
 
@@ -77,5 +80,8 @@ void RE03ActionInitialization::Build() const
   {
     // primary generator action is defined to the worker thread
     SetUserAction(new RE03PrimaryGeneratorAction);
+    SetUserAction(new RunAction);
+    SetUserAction(new SteppingAction);
+
   }
 }

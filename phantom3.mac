@@ -1,5 +1,9 @@
 #Defining Volume and Scorer for Phantom 3
-/score/create/realWorldLogVol Phantom3Logical
+/score/create/cylinderMesh Phantom3Mesh
+/score/mesh/cylinderSize 36. 170. cm
+/score/mesh/translate/xyz -1439.98 1295.12 -9.98 cm
+/score/mesh/nBin 30 30 30
+
 
 #Defining Scorers
 /score/quantity/energyDeposit eDepElectron

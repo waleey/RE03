@@ -65,7 +65,7 @@
 
 ##Defining beam parameters
 /gps/pos/shape Circle
-/gps/pos/centre 8.74395 -4.93871 -0.561975 m
+/gps/pos/centre 8.28675 -4.93871 -0.561975 m
 /gps/pos/radius 20. um
 /gps/pos/sigma_r 0. mm
 /gps/particle e-

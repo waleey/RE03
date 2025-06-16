@@ -23,8 +23,6 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
         {
             G4String volName = step->GetPostStepPoint()->GetPhysicalVolume()->GetName();
             G4String particleName = step->GetTrack()->GetParticleDefinition()->GetParticleName();
-            G4cout << "Particle: " << particleName << " in volume: " << volName << G4endl;
-
             if ((volName == "Phantom1" || volName == "Phantom2" || volName == "Phantom3" ||
                 volName == "Phantom4" || volName == "Phantom5") &&
                 allowedParticles.count(particleName))

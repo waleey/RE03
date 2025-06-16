@@ -9,10 +9,12 @@
 /control/execute phantom3.mac
 /control/execute phantom4.mac
 /control/execute phantom5.mac
+/control/execute phantom6.mac
+/control/execute phantom7.mac
 
 ##Defining beam parameters
 /gps/pos/shape Circle
-/gps/pos/centre 8.74395 -4.93871 -0.561975 m
+/gps/pos/centre 8.28675 -4.93871 -0.561975 m
 /gps/pos/radius 20. um
 /gps/pos/sigma_r 0. um
 /gps/particle e-
@@ -32,7 +34,7 @@
 /gps/ene/sigma 2.25 GeV
 
 /run/printProgress 1000
-/run/beamOn 10
+/run/beamOn 200000
 
 #Dumping phantom1 outputs to file
 /score/dumpQuantityToFile Phantom1Mesh eDepElectron phantom_output/phantom1/eDepElectron.txt
@@ -143,3 +145,47 @@
 
 /score/dumpQuantityToFile Phantom5Mesh eDepMuonMinus phantom_output/phantom5/eDepMuonMinus.txt
 /score/dumpQuantityToFile Phantom5Mesh dDepMuonMinus phantom_output/phantom5/dDepMuonMinus.txt
+
+#Dumping phantom6 outputs to file
+/score/dumpQuantityToFile Phantom5Mesh eDepElectron phantom_output/phantom6/eDepElectron.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepElectron phantom_output/phantom6/dDepElectron.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepProton phantom_output/phantom6/eDepProton.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepProton phantom_output/phantom6/dDepProton.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepNeutron phantom_output/phantom6/eDepNeutron.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepNeutron phantom_output/phantom6/dDepNeutron.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepGamma phantom_output/phantom6/eDepGamma.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepGamma phantom_output/phantom6/dDepGamma.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepAlpha phantom_output/phantom6/eDepAlpha.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepAlpha phantom_output/phantom6/dDepAlpha.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepMuonPlus phantom_output/phantom6/eDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepMuonPlus phantom_output/phantom6/dDepMuonPlus.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepMuonMinus phantom_output/phantom6/eDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepMuonMinus phantom_output/phantom6/dDepMuonMinus.txt
+
+#Dumping phantom7 outputs to file
+/score/dumpQuantityToFile Phantom5Mesh eDepElectron phantom_output/phantom7/eDepElectron.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepElectron phantom_output/phantom7/dDepElectron.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepProton phantom_output/phantom7/eDepProton.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepProton phantom_output/phantom7/dDepProton.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepNeutron phantom_output/phantom7/eDepNeutron.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepNeutron phantom_output/phantom7/dDepNeutron.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepGamma phantom_output/phantom7/eDepGamma.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepGamma phantom_output/phantom7/dDepGamma.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepAlpha phantom_output/phantom7/eDepAlpha.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepAlpha phantom_output/phantom7/dDepAlpha.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepMuonPlus phantom_output/phantom7/eDepMuonPlus.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepMuonPlus phantom_output/phantom7/dDepMuonPlus.txt
+
+/score/dumpQuantityToFile Phantom5Mesh eDepMuonMinus phantom_output/phantom7/eDepMuonMinus.txt
+/score/dumpQuantityToFile Phantom5Mesh dDepMuonMinus phantom_output/phantom7/dDepMuonMinus.txt

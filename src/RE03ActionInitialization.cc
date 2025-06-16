@@ -66,7 +66,7 @@ void RE03ActionInitialization::BuildForMaster() const
 
     // primary generator and run action action is defined to the master thread 
     SetUserAction(new RE03PrimaryGeneratorAction);
-    SetUserAction(new RunAction);
+    //SetUserAction(new RunAction);
   }
 }
 
@@ -80,8 +80,8 @@ void RE03ActionInitialization::Build() const
   {
     // primary generator action is defined to the worker thread
     SetUserAction(new RE03PrimaryGeneratorAction);
-    SetUserAction(new RunAction);
-    SetUserAction(new SteppingAction);
+   // SetUserAction(new RunAction);
+   //SetUserAction(new SteppingAction);
 
   }
 }

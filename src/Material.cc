@@ -119,6 +119,15 @@ void Material::ConstructConcrete()
   G4NistManager* NISTman = G4NistManager::Instance();
   fConcrete = NISTman->FindOrBuildMaterial("G4_CONCRETE");
 }
+void Material::ConstructHDPE()
+{
+  G4double density = 0.97 * g / cm3;
+  G4double fractionmass;
+  G4int ncomponents = 2;
+  fHDPE = new G4Material("HDPE", density, ncomponents);
+  fHDPE->AddElement(elH, 0.13);
+  fHDPE->AddElement(elC, 0.87);
+}
 G4Material* Material::GetHDConcrete() 
 {
   ConstructHDConcrete();
@@ -178,4 +187,10 @@ G4Material* Material::GetConcrete()
   ConstructConcrete();
   G4cout << "Concrete is successfully constructed" << G4endl;
   return fConcrete;
+}
+G4Material* Material::GetHDPE()
+{
+  ConstructHDPE();
+  G4cout << "HDPE is successfully constructed" << G4endl;
+  return fHDPE;
 }

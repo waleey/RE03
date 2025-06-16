@@ -46,7 +46,14 @@ void TubeAndChamber::ConstructBeamTube()
     fBeamTubeXCoord = fChamberXCoord + fHoleXCoord;
     fBeamTubeYCoord = fInnerWallHalfSizeY - fLayerTotalThickness - tubeLength / 2;
     fBeamTubeZCoord = fChamberZCoord;
-
+/*
+    G4cout << "Beam Tube Coordinates: "
+           << "X: " << (fBeamTubeXCoord - 1.5 * foot) / m << " m, "
+           << "Y: " << fBeamTubeYCoord / m << " m, "
+           << "Z: " << fBeamTubeZCoord / m << " m" << G4endl;
+    
+    exit(0);
+*/
     //Rotating the tube about the x axis
     G4RotationMatrix* beamTubeRotation = new G4RotationMatrix();
     beamTubeRotation->rotateX(90. * deg);

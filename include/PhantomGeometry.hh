@@ -19,6 +19,8 @@ private:
     void ConstructPhantom3();
     void ConstructPhantom4();
     void ConstructPhantom5();
+    void ConstructPhantom6();
+    void ConstructPhantom7();
 
 private:
     G4LogicalVolume* fInnerWorldLogical;

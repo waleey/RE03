@@ -52,8 +52,8 @@ void LayerGeometry::ConstructLayerGeometry(G4double innerWallHalfSizeX, G4double
     fLayerSizeX = (1 * 0.5) * m;
     fLayerSizeZ = (1 * 0.5) * m;
     
-    ConstructLayer1();
-    ConstructLayer2();
+    //ConstructLayer1();
+    //ConstructLayer2();
     ConstructLayer3();
     ConstructLayer4();
     ConstructLayer5();
@@ -63,7 +63,7 @@ void LayerGeometry::ConstructLayer1()
     G4VSolid* layer1Solid = new G4Box("Layer1", fLayerSizeX, fLayer1Thickness * 0.5, fLayerSizeZ);
     G4LogicalVolume* layer1Logical = new G4LogicalVolume(layer1Solid, fMaterial -> GetHDConcrete(), "Layer1");
     fLayer1Phys = new G4PVPlacement(0, fLayer1Coord, layer1Logical, "Layer1Phys",
-                                                  finnerWallLogical, false, 0);
+                                                  finnerWallLogical, false, 0, true);
     layer1Logical->SetVisAttributes(new G4VisAttributes(G4Colour::Red()));
 }
 void LayerGeometry::ConstructLayer2()
@@ -71,7 +71,7 @@ void LayerGeometry::ConstructLayer2()
     G4VSolid* layer2Solid = new G4Box("Layer2", fLayerSizeX, fLayer2Thickness * 0.5, fLayerSizeZ);
     G4LogicalVolume* layer2Logical = new G4LogicalVolume(layer2Solid, fMaterial -> GetIron(), "Layer2");
     fLayer2Phys = new G4PVPlacement(0, fLayer2Coord, layer2Logical, "Layer2Phys",
-                                                  finnerWallLogical, false, 0);
+                                                  finnerWallLogical, false, 0, true);
     layer2Logical->SetVisAttributes(new G4VisAttributes(G4Colour::Green()));
 }
 void LayerGeometry::ConstructLayer3()
@@ -79,7 +79,7 @@ void LayerGeometry::ConstructLayer3()
     G4VSolid* layer3Solid = new G4Box("Layer3", fLayerSizeX, fLayer3Thickness * 0.5, fLayerSizeZ);
     G4LogicalVolume* layer3Logical = new G4LogicalVolume(layer3Solid, fMaterial -> GetHDConcrete(), "Layer3");
     fLayer3Phys = new G4PVPlacement(0, fLayer3Coord, layer3Logical, "Layer3Phys",
-                                                  finnerWallLogical, false, 0);
+                                                  finnerWallLogical, false, 0, true);
     layer3Logical->SetVisAttributes(new G4VisAttributes(G4Colour::Blue()));
 }
 void LayerGeometry::ConstructLayer4()
@@ -87,7 +87,7 @@ void LayerGeometry::ConstructLayer4()
     G4VSolid* layer4Solid = new G4Box("Layer4", fLayerSizeX, fLayer4Thickness * 0.5, fLayerSizeZ);
     G4LogicalVolume* layer4Logical = new G4LogicalVolume(layer4Solid, fMaterial -> GetIron(), "Layer4");
     fLayer4Phys = new G4PVPlacement(0, fLayer4Coord, layer4Logical, "Layer4Phys",
-                                                  finnerWallLogical, false, 0);
+                                                  finnerWallLogical, false, 0, true);
     layer4Logical->SetVisAttributes(new G4VisAttributes(G4Colour::Cyan()));
 }
 void LayerGeometry::ConstructLayer5()
@@ -95,7 +95,7 @@ void LayerGeometry::ConstructLayer5()
     G4VSolid* layer5Solid = new G4Box("Layer5", fLayerSizeX, fLayer5Thickness * 0.5, fLayerSizeZ);
     G4LogicalVolume* layer5Logical = new G4LogicalVolume(layer5Solid, fMaterial -> GetHDConcrete(), "Layer5");
     fLayer5Phys = new G4PVPlacement(0, fLayer5Coord, layer5Logical, "Layer5Phys",
-                                                  finnerWallLogical, false, 0);
+                                                  finnerWallLogical, false, 0, true);
     layer5Logical->SetVisAttributes(new G4VisAttributes(G4Colour::Magenta()));
 }
 void LayerGeometry::UpdateGeometry()

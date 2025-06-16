@@ -60,7 +60,7 @@ int main(int argc,char** argv)
  // Construct the run manager
  //
  auto* runManager = G4RunManagerFactory::CreateRunManager();
- runManager->SetNumberOfThreads(4);
+ runManager->SetNumberOfThreads(12);
 
  // Activate UI-command base scorer
  G4ScoringManager * scManager = G4ScoringManager::GetScoringManager();

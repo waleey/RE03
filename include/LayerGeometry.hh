@@ -50,12 +50,13 @@ private:
     is 16.0 m. If room length changes, 
     you have to update the parameters here accordingly.
      */
-    G4double fTotalThickness = 4 * m;
-    G4double fLayer1Thickness = 0.8 * m;
-    G4double fLayer2Thickness = 0.8 * m;
+    
+    G4double fLayer1Thickness = 0. * m;
+    G4double fLayer2Thickness = 0. * m;
     G4double fLayer3Thickness = 0.8 * m;
     G4double fLayer4Thickness = 0.8 * m;
     G4double fLayer5Thickness = 0.8 * m;
+    G4double fTotalThickness = fLayer1Thickness + fLayer2Thickness + fLayer3Thickness + fLayer4Thickness + fLayer5Thickness;
 
     //Defining world wall gap and wall thickness
     G4double fInnerWallHalfSizeX;

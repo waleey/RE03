@@ -31,6 +31,7 @@ cd RE03
 Create a build directory, run CMake, and compile using all available processor cores:
 
 ```
+cd /path/to/RE03/
 mkdir build
 cd build
 cmake ..

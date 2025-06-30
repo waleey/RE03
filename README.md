@@ -1,3 +1,5 @@
+#READ ME STILL NEEDS MASSIVE UPDATING
+
 # RE03 – A Geant4 Simulation Example
 
 This repository contains a Geant4-based simulation project. Follow the steps below to install dependencies, build the project, and run the simulation.
